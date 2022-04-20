@@ -8,10 +8,20 @@ h1 {
   font-size: 3.5em;
 }
 
-li {
+.topicItems {
   margin: 10px;
   list-style-type: none;
   border: 1px solid black;
   border-radius: 8px;
   margin-left: auto;
+}
+
+.navBarList {
+  list-style: none;
+  background-color: rgb(80, 76, 76);
+}
+
+.navBarList li {
+  display: inline-block;
+  padding: 1rem 2rem;
 }

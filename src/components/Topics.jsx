@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getTopics } from "../utils/api";
 import { Link } from "react-router-dom";
 
-const ArticleByTopic = () => {
+const Topics = () => {
   const [error, setError] = useState();
   const [topics, setTopics] = useState();
 
@@ -27,7 +27,7 @@ const ArticleByTopic = () => {
           {topics.map((topic) => {
             return (
               <>
-                <li key={topic.slug}>
+                <li className="topicItems" key={topic.slug}>
                   <Link to={`/topics/${topic.slug}`}>
                     <h2>{topic.slug.toUpperCase()}</h2>
                   </Link>
@@ -42,4 +42,4 @@ const ArticleByTopic = () => {
   );
 };
 
-export default ArticleByTopic;
+export default Topics;
