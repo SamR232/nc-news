@@ -1,12 +1,17 @@
 .App {
   text-align: center;
   font-family: Georgia, "Times New Roman", Times, serif;
+  margin-left: 0px;
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 3.5em;
 }
 
 li {
-  margin:10px
+  margin: 10px;
+  list-style-type: none;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-left: auto;
 }

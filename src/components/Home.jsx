@@ -29,7 +29,7 @@ const Home = () => {
                 <li key={article.id}>
                   <h2>{article.title}</h2>
                   <p>{article.body}</p>
-                  <h3>topic: {article.topic}</h3>
+                  <h3>Topic: {article.topic}</h3>
                   <h3>Author: {article.author}</h3>
                 </li>
               </>

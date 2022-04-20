@@ -9,7 +9,5 @@ export const getArticles = () => {
 };
 
 export const getTopics = () => {
-  return newsApi.get("/topics").then(({ data }) => {
-    //console.log(data);
-  });
+  return newsApi.get("/topics").then(({ data }) => data.topics);
 };
