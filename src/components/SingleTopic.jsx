@@ -6,19 +6,22 @@ const SingleTopic = () => {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(true);
   const { topic_slug } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getArticles(topic_slug)
       .then((result) => {
         setArticles(result);
+        setIsLoading(false);
       })
       .catch((err) => {
-        setError(false);
+        setError(err.response.data);
+        console.log(error)
       });
   }, [topic_slug]);
 
-  if (!articles) {
-    return <h1>{error}</h1>;
+  if (isLoading) {
+    return <h3>Loading...</h3>;
   }
   return (
     <>

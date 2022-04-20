@@ -17,11 +17,26 @@ h1 {
 }
 
 .navBarList {
-  list-style: none;
   background-color: rgb(80, 76, 76);
 }
 
 .navBarList li {
   display: inline-block;
   padding: 1rem 2rem;
+}
+
+.articles {
+  border: solid black;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.collapsible .content {
+  padding: 6px;
+  background-color: #eeeeee;
+}
+.collapsible .header {
+  background-color: #dddddd;
+  padding: 6px;
+  cursor: pointer;
 }

@@ -13,7 +13,6 @@ function App() {
         <NavBar />
         <h1>Nc News</h1>
       </header>
-
       <Routes>
         <Route path="/" element={<Articles />} />
         <Route path="/topics" element={<Topics />} />
