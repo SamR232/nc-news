@@ -1,6 +1,8 @@
 * {
   padding: 0;
   margin: 0;
+  text-decoration: none;
+  line-height: 175%;
 }
 
 .App {
@@ -26,8 +28,17 @@ h1 {
 .navBarList {
   background-color: rgb(10, 10, 10);
 }
+a {
+  color: rgb(75, 182, 182);
+}
+a:hover {
+  color: rgb(17, 123, 123);
+}
 
 .navBarList li {
+  border-left: solid white 1px;
+  border-right: solid white 1px;
+  font-size: 2rem;
   display: inline-block;
   padding: 1rem 2rem;
 }
@@ -37,7 +48,6 @@ h1 {
   border-radius: 8px;
   list-style: none;
   margin: 1em;
-  line-height: 150%;
   text-align: center;
   list-style-position: inside;
   padding: 20px;
@@ -49,4 +59,20 @@ h1 {
   background-color: #969595;
   padding: 6px;
   cursor: pointer;
+}
+
+.icons {
+  grid-template-columns: repeat(2, 50px 1fr);
+  padding: 10px;
+  margin-left: 10px;
+  background-color: black;
+  border-radius: 8px;
+}
+
+.footer {
+  background-color: black;
+  color: #969595;
+  height: 1em;
+  padding: 2.5em;
+  font-size: 25px;
 }

@@ -4,21 +4,23 @@ import { Link } from "react-router-dom";
 
 const Topics = () => {
   const [error, setError] = useState();
-  const [topics, setTopics] = useState();
+  const [topics, setTopics] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getTopics()
       .then((topics) => {
         setTopics(topics);
+        setIsLoading(false)
       })
       .catch((err) => {
         setError(err.response.data);
       });
   }, []);
 
-  if (!topics) {
-    return <h1>{error}</h1>;
-  }
+    if (isLoading) {
+      return <h3>Loading...</h3>;
+    }
 
   return (
     <>
