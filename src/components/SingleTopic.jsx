@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
+import Collapsible from "../utils/Collapsible";
 
 const SingleTopic = () => {
   const [articles, setArticles] = useState([]);
@@ -16,7 +17,7 @@ const SingleTopic = () => {
       })
       .catch((err) => {
         setError(err.response.data);
-        console.log(error)
+        console.log(error);
       });
   }, [topic_slug]);
 
@@ -30,9 +31,9 @@ const SingleTopic = () => {
           {articles.map((article) => {
             return (
               <>
-                <li key={article.id}>
+                <li key={article.id} className="articles">
                   <h2>{article.title}</h2>
-                  <p>{article.body}</p>
+                  <Collapsible article={article} />
                   <h3>Topic: {article.topic}</h3>
                   <h3>Author: {article.author}</h3>
                 </li>

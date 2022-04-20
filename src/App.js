@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import Topics from "./components/Topics";
 import SingleTopic from "./components/SingleTopic";
 import "@fontsource/roboto/300.css";
+import { Typography } from "@mui/material";
 
 function App() {
   return (

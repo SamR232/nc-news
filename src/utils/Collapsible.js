@@ -6,7 +6,7 @@ function Collapsible({ article }) {
   return (
     <div className="collapsible">
       <div className="header" {...getToggleProps()}>
-        {isExpanded ? "Collapse Article" : "Show Article"}
+        <h3>{isExpanded ? "Collapse Article" : "Show Article"}</h3>
       </div>
       <div {...getCollapseProps()}>
         <div className="content"></div>
