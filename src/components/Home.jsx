@@ -2,21 +2,23 @@ import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 
 const Home = () => {
-  const [articles, setArticles] = useState();
-  const [error, setError] = useState();
+  const [articles, setArticles] = useState([]);
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getArticles()
       .then((result) => {
         setArticles(result);
+        setIsLoading(false);
       })
       .catch((err) => {
-        setError(err.response.data);
+        setError(true);
       });
   }, []);
 
-  if (!articles) {
-    return null;
+  if (isLoading) {
+    return <h1>Loading</h1>;
   }
 
   return (
@@ -28,7 +30,6 @@ const Home = () => {
               <>
                 <li key={article.id}>
                   <h2>{article.title}</h2>
-                  <p>{article.body}</p>
                   <h3>topic: {article.topic}</h3>
                   <h3>Author: {article.author}</h3>
                 </li>
