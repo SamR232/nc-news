@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
+import Articles from "./components/Articles";
 import NavBar from "./components/NavBar";
 import Topics from "./components/Topics";
 import SingleTopic from "./components/SingleTopic";
@@ -15,7 +15,7 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Articles />} />
         <Route path="/topics" element={<Topics />} />
         <Route path="/topics/:topic_slug" element={<SingleTopic />} />
       </Routes>

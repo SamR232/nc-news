@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 
-const Home = () => {
+const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -42,4 +42,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Articles;
