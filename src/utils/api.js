@@ -19,3 +19,14 @@ export const getArticles = (topic_slug) => {
 export const getTopics = () => {
   return newsApi.get("/topics").then(({ data }) => data.topics);
 };
+
+export const patchVotes = (article_id) => {
+  return newsApi.patch("/articles", 
+  { });
+};
+
+export const getArticleById = (article_id) => {
+  return newsApi.get(`/articles/${article_id}`).then(({ data }) => {
+    return data.article;
+  });
+};
