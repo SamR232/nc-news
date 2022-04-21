@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArticleById } from "../utils/api";
+import LikeButton from "../components/LikeButton";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState();
@@ -23,6 +24,7 @@ const SingleArticle = () => {
       <li className="articles" key={article.article_id}>
         <h2>{article.title}</h2>
         <p>{article.body}</p>
+        <LikeButton article_id={article_id} />
         <h3>Topic: {article.topic}</h3>
         <h3>Author: {article.author}</h3>
       </li>

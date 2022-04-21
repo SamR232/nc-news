@@ -1,17 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import { Button } from "@mui/material";
-import { getArticleById, patchVotes } from "../utils/api";
+import { patchVotes } from "../utils/api";
 
-export default function LikeButton() {
+export default function LikeButton({ article_id }) {
   const [votes, setVotes] = useState(0);
   const [clicked, setClicked] = useState(false);
+
   function handleClick(event) {
     event.preventDefault();
-    setVotes((currVotes) => currVotes + 1);
-    patchVotes().then((result) => {
-      setClicked(true);
-    });
+
+    if (!clicked) {
+      setVotes((currVotes) => currVotes + 1);
+      patchVotes(article_id).then(({ data }) => {
+        console.log(data);
+        setClicked(true);
+      });
+    }
   }
 
   return (

@@ -21,8 +21,7 @@ export const getTopics = () => {
 };
 
 export const patchVotes = (article_id) => {
-  return newsApi.patch("/articles", 
-  { });
+  return newsApi.patch(`/articles/${article_id}`, { inc_votes: 1 });
 };
 
 export const getArticleById = (article_id) => {
