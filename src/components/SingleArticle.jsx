@@ -24,7 +24,7 @@ const SingleArticle = () => {
       <li className="articles" key={article.article_id}>
         <h2>{article.title}</h2>
         <p>{article.body}</p>
-        <LikeButton article_id={article_id} />
+        <LikeButton article_id={article.article_id} votes={article.votes} />
         <h3>Topic: {article.topic}</h3>
         <h3>Author: {article.author}</h3>
       </li>
