@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getArticles } from "../utils/api";
 import Collapsible from "../utils/Collapsible";
 
@@ -30,11 +31,14 @@ const Articles = () => {
           {articles.map((article) => {
             return (
               <>
-                <li className="articles" key={article.id}>
-                  <h2>{article.title}</h2>
+                <li className="articles" key={article.article_id}>
+                  <Link to={`/articles/${article.article_id}`}>
+                    <h2>{article.title}</h2>
+                  </Link>
                   <Collapsible article={article} />
                   <h3>Topic: {article.topic}</h3>
                   <h3>Author: {article.author}</h3>
+                  <p>click title to open article</p>
                 </li>
               </>
             );

@@ -1,5 +1,6 @@
 import React from "react";
 import useCollapse from "react-collapsed";
+import LikeButton from "../components/LikeButton";
 
 function Collapsible({ article }) {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
@@ -11,6 +12,7 @@ function Collapsible({ article }) {
       <div {...getCollapseProps()}>
         <div className="content"></div>
         <p>{article.body}</p>
+        <LikeButton />
       </div>
     </div>
   );

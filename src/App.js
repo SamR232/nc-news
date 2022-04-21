@@ -6,6 +6,7 @@ import Topics from "./components/Topics";
 import SingleTopic from "./components/SingleTopic";
 import IconLinks from "./components/IconLinks";
 import Footer from "./components/Footer";
+import SingleArticle from "./components/SingleArticle";
 import "@fontsource/roboto/300.css";
 
 function App() {
@@ -18,8 +19,10 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<Articles />} />
+        <Route path="/articles" element={<Articles />} />
         <Route path="/topics" element={<Topics />} />
         <Route path="/topics/:topic_slug" element={<SingleTopic />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />} />
       </Routes>
       <Footer />
     </div>
