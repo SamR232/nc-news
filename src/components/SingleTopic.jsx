@@ -25,24 +25,20 @@ const SingleTopic = () => {
     return <h3>Loading...</h3>;
   }
   return (
-    <>
-      <main>
-        <ul>
-          {articles.map((article) => {
-            return (
-              <>
-                <li key={article.id} className="articles">
-                  <h2>{article.title}</h2>
-                  <Collapsible article={article} />
-                  <h3>Topic: {article.topic}</h3>
-                  <h3>Author: {article.author}</h3>
-                </li>
-              </>
-            );
-          })}
-        </ul>
-      </main>
-    </>
+    <ul>
+      {articles.map((article) => {
+        return (
+          <>
+            <li key={article.id} className="articles">
+              <h2>{article.title}</h2>
+              <Collapsible article={article} />
+              <h3>Topic: {article.topic}</h3>
+              <h3>Author: {article.author}</h3>
+            </li>
+          </>
+        );
+      })}
+    </ul>
   );
 };
 
