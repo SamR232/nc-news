@@ -38,7 +38,9 @@ const Articles = () => {
                   <Collapsible article={article} />
                   <h3>Topic: {article.topic}</h3>
                   <h3>Author: {article.author}</h3>
-                  <p>click title to open article</p>
+                  <p>
+                    Click title to vote and leave a comment on this article!
+                  </p>
                 </li>
               </>
             );
