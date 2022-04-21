@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import { Button } from "@mui/material";
-import { patchVotes } from "../utils/api";
+import { getArticleById, patchVotes } from "../utils/api";
 
-export default function Votes() {
+export default function LikeButton() {
   const [votes, setVotes] = useState(0);
   const [clicked, setClicked] = useState(false);
   function handleClick(event) {

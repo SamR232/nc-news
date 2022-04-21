@@ -6,13 +6,11 @@ const SingleArticle = () => {
   const [article, setArticle] = useState();
   const { article_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  console.log(article_id);
 
   useEffect(() => {
     getArticleById(article_id).then((articleById) => {
       setArticle(articleById);
       setIsLoading(false);
-      console.log(article);
     });
   }, []);
 
