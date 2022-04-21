@@ -11,7 +11,7 @@
   font-family: "Roboto";
   font-weight: bold;
   font-size: larger;
-  box-sizing: border-box;
+  display: grid;
 }
 
 h1 {
@@ -19,10 +19,9 @@ h1 {
 }
 
 .topicItems {
-  margin: 10px;
   list-style-type: none;
   padding: 20px;
-  margin-left: auto;
+  border-top: solid 5px rgb(75, 182, 182);
 }
 
 .navBarList {
@@ -48,9 +47,8 @@ a:hover {
   border-radius: 8px;
   list-style: none;
   margin: 1em;
-  text-align: center;
-  list-style-position: inside;
   padding: 20px;
+  margin-left: 10px;
 }
 .collapsible .content {
   background-color: #0b0b0b;
@@ -67,6 +65,7 @@ a:hover {
   margin-left: 10px;
   background-color: black;
   border-radius: 8px;
+  border: solid 5px rgb(75, 182, 182);
 }
 
 .footer {
