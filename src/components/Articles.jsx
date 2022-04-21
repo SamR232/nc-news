@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 import Collapsible from "../utils/Collapsible";
 
-
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(false);
@@ -18,7 +17,7 @@ const Articles = () => {
       .catch((err) => {
         setError(true);
       });
-  });
+  }, []);
 
   if (isLoading) {
     return <h3>Loading...</h3>;
