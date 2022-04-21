@@ -1,7 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  line-height: 175%;
+}
+
 .App {
   text-align: center;
   font-family: Georgia, "Times New Roman", Times, serif;
-  margin-left: 0px;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: larger;
+  display: grid;
 }
 
 h1 {
@@ -9,19 +19,59 @@ h1 {
 }
 
 .topicItems {
-  margin: 10px;
   list-style-type: none;
-  border: 1px solid black;
-  border-radius: 8px;
-  margin-left: auto;
+  padding: 20px;
+  border-top: solid 5px rgb(75, 182, 182);
 }
 
 .navBarList {
-  list-style: none;
-  background-color: rgb(80, 76, 76);
+  background-color: rgb(10, 10, 10);
+}
+a {
+  color: rgb(75, 182, 182);
+}
+a:hover {
+  color: rgb(17, 123, 123);
 }
 
 .navBarList li {
+  border-left: solid white 1px;
+  border-right: solid white 1px;
+  font-size: 2rem;
   display: inline-block;
   padding: 1rem 2rem;
+}
+
+.articles {
+  border: solid black;
+  border-radius: 8px;
+  list-style: none;
+  margin: 1em;
+  padding: 20px;
+  margin-left: 10px;
+}
+.collapsible .content {
+  background-color: #0b0b0b;
+}
+.collapsible .header {
+  background-color: #969595;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.icons {
+  grid-template-columns: repeat(2, 50px 1fr);
+  padding: 10px;
+  margin-left: 10px;
+  background-color: black;
+  border-radius: 8px;
+  border: solid 5px rgb(75, 182, 182);
+}
+
+.footer {
+  background-color: black;
+  color: #969595;
+  height: 1em;
+  padding: 2.5em;
+  font-size: 25px;
 }
