@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArticleById } from "../utils/api";
 import LikeButton from "../components/LikeButton";
-import Comments from "./Comments";
+import Comments from "./comments/Comments";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState();

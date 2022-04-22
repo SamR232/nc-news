@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { getComments, postComment } from "../utils/api";
+import { postComment } from "../../utils/api";
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-const PostComment = ({ article_id, setComments, comments }) => {
+const PostComment = ({ article_id, setComments }) => {
   const [username, setUsername] = useState("tickle122");
   const [newComment, setNewComment] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
+    alert("click ok to post comment!");
+    setNewComment("");
 
     postComment(article_id, { body: newComment, username: username }).then(
       (comment) => {
@@ -25,6 +27,7 @@ const PostComment = ({ article_id, setComments, comments }) => {
       <TextField
         id="outlined-multiline-flexible"
         label="Username"
+        required
         maxRows={4}
         value={username}
         onChange={(event) => setUsername(event.target.value)}
