@@ -1,21 +1,27 @@
 import { getComments } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import PostComments from "./PostComment";
+import PostComment from "./PostComment";
 
 const Comments = () => {
   const { article_id } = useParams();
-  const [comments, SetComments] = useState([]);
+  const [comments, setComments] = useState([]);
+
+  console.log(comments);
 
   useEffect(() => {
     getComments(article_id).then((articleComments) => {
-      SetComments(articleComments);
+      setComments(articleComments);
     });
   }, [article_id]);
 
   return (
     <div>
-      <PostComments article_id={article_id} />
+      <PostComment
+        article_id={article_id}
+        setComments={setComments}
+        comments={comments}
+      />
       <ul>
         {comments.map((comment) => {
           return (

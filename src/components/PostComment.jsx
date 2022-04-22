@@ -1,51 +1,49 @@
-import { useState, useEffect } from "react";
-import { postComment } from "../utils/api";
+import { useState } from "react";
+import { getComments, postComment } from "../utils/api";
 import * as React from "react";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-const PostComments = ({ article_id }) => {
-  const [username, setUsername] = useState("");
-  const [comment, setComment] = useState("");
+const PostComment = ({ article_id, setComments, comments }) => {
+  const [username, setUsername] = useState("tickle122");
+  const [newComment, setNewComment] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    postComment(username, comment, article_id).then((result) => {
-      console.log(result);
-    });
+
+    postComment(article_id, { body: newComment, username: username }).then(
+      (comment) => {
+        setComments((comments) => {
+          return [comment, ...comments];
+        });
+      }
+    );
   }
 
   return (
-    <Box
-      component="form"
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <form onSubmit={handleSubmit}>
-        <TextField
-          id="outlined-multiline-flexible"
-          label="Username"
-          multiline
-          maxRows={4}
-          value={username}
-          onChange={(event) => setUsername(event.target.value)}
-        />
-        <TextField
-          id="outlined-multiline-flexible"
-          label="Add your comment here!"
-          multiline
-          maxRows={4}
-          value={comment}
-          onChange={(event) => setComment(event.target.value)}
-        />
-        <input type="submit" />
-      </form>
-    </Box>
+    <form onSubmit={handleSubmit}>
+      <TextField
+        id="outlined-multiline-flexible"
+        label="Username"
+        maxRows={4}
+        value={username}
+        onChange={(event) => setUsername(event.target.value)}
+      />
+      <TextField
+        id="outlined-multiline-flexible"
+        label="Add your comment here!"
+        fullWidth
+        multiline
+        required
+        maxRows={4}
+        value={newComment}
+        onChange={(event) => setNewComment(event.target.value)}
+      />
+      <Button type="submit" variant="contained">
+        Submit
+      </Button>
+    </form>
   );
 };
 
-export default PostComments;
+export default PostComment;
