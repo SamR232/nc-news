@@ -57,6 +57,8 @@ a:hover {
   background-color: #969595;
   padding: 6px;
   cursor: pointer;
+  border: solid black;
+  border-radius: 8px;
 }
 
 .icons {

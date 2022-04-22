@@ -1,6 +1,7 @@
 import { getComments } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import PostComments from "./PostComment";
 
 const Comments = () => {
   const { article_id } = useParams();
@@ -10,22 +11,23 @@ const Comments = () => {
     getComments(article_id).then((articleComments) => {
       SetComments(articleComments);
     });
-  });
+  }, [article_id]);
 
   return (
-    <ul>
-      {comments.map((comment) => {
-        return (
-          <>
+    <div>
+      <PostComments article_id={article_id} />
+      <ul>
+        {comments.map((comment) => {
+          return (
             <li className="articles" key={comment.comment_id}>
               <p>{comment.body}</p>
-              <h3>Author: {comment.author}</h3>
-              <h3>Created at: {comment.created_at}</h3>
+              <p>Author: {comment.author}</p>
+              <p>Created at: {comment.created_at}</p>
             </li>
-          </>
-        );
-      })}
-    </ul>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 
