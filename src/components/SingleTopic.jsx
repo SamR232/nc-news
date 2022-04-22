@@ -36,6 +36,7 @@ const SingleTopic = () => {
               <Collapsible article={article} />
               <h3>Topic: {article.topic}</h3>
               <h3>Author: {article.author}</h3>
+              <p>Click title to leave a vote or a comment on this article!</p>
             </li>
           </>
         );

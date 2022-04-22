@@ -15,7 +15,11 @@ export default function LikeButton({ article_id, votes }) {
   }, [clicked, article_id, votes]);
 
   return (
-    <Button onClick={() => setClicked(true)} variant="outlined">
+    <Button
+      onClick={() => setClicked(true)}
+      variant="outlined"
+      className="likeButton"
+    >
       <ThumbUpIcon />
       {newVotes}
     </Button>
