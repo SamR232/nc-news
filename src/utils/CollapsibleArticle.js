@@ -1,7 +1,7 @@
 import React from "react";
 import useCollapse from "react-collapsed";
 
-function Collapsible({ article }) {
+function CollapsibleArticle({ article }) {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
   return (
     <div className="collapsible">
@@ -11,10 +11,9 @@ function Collapsible({ article }) {
       <div {...getCollapseProps()}>
         <div className="content"></div>
         <p>{article.body}</p>
-        
       </div>
     </div>
   );
 }
 
-export default Collapsible;
+export default CollapsibleArticle;
