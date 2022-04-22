@@ -32,6 +32,7 @@ const Comments = () => {
               <DeleteComment
                 comment_id={comment.comment_id}
                 article_id={article_id}
+                setComments={setComments}
               />
             </li>
           );
