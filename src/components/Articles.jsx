@@ -13,7 +13,6 @@ const Articles = () => {
       .then((result) => {
         setArticles(result);
         setIsLoading(false);
-        console.log(result);
       })
       .catch((err) => {
         setError(true);
@@ -35,6 +34,7 @@ const Articles = () => {
             <CollapsibleArticle article={article} />
             <h3>Topic: {article.topic}</h3>
             <h3>Author: {article.author}</h3>
+            <p>Votes: {article.votes}</p>
             <p>Click title to leave a vote or a comment on this article!</p>
           </li>
         );

@@ -12,6 +12,8 @@ const DeleteComment = ({ comment_id, article_id, setComments }) => {
     });
   }
 
+
+
   return (
     <>
       <Button onClick={handleClick} variant="contained">

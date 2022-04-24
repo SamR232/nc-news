@@ -3,6 +3,7 @@ import { postComment } from "../../utils/api";
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 const PostComment = ({ article_id, setComments }) => {
   const [username, setUsername] = useState("tickle122");
@@ -23,29 +24,55 @@ const PostComment = ({ article_id, setComments }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        id="outlined-multiline-flexible"
-        label="Username"
-        required
-        maxRows={4}
-        value={username}
-        onChange={(event) => setUsername(event.target.value)}
-      />
-      <TextField
-        id="outlined-multiline-flexible"
-        label="Add your comment here!"
-        fullWidth
-        multiline
-        required
-        maxRows={4}
-        value={newComment}
-        onChange={(event) => setNewComment(event.target.value)}
-      />
-      <Button type="submit" variant="contained">
-        Submit
-      </Button>
-    </form>
+    <>
+      <Box
+        sx={{
+          margin: "15px",
+          width: "100%",
+        }}
+      >
+        <TextField
+          sx={{
+            margin: "10px",
+            width: "50%",
+          }}
+          id="outlined-multiline-flexible"
+          label="Username"
+          required
+          maxRows={4}
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+        />
+        <TextField
+          sx={{
+            mx: "5px",
+            width: "80%",
+          }}
+          id="outlined-multiline-flexible"
+          label="Add your comment here!"
+          fullWidth
+          multiline
+          required
+          maxRows={4}
+          value={newComment}
+          onChange={(event) => setNewComment(event.target.value)}
+        />
+        <Button
+          size="large"
+          sx={{
+            mx: "5px",
+            my: "5px",
+          }}
+          type="submit"
+          variant="contained"
+          onClick={(e) => {
+            handleSubmit(e);
+          }}
+        >
+          Submit
+        </Button>
+      </Box>
+    </>
   );
 };
 
