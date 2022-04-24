@@ -20,8 +20,8 @@ export const getTopics = () => {
   return newsApi.get("/topics").then(({ data }) => data.topics);
 };
 
-export const patchVotes = (article_id) => {
-  return newsApi.patch(`/articles/${article_id}`, { inc_votes: 1 });
+export const patchVotes = (article_id, dataObject) => {
+  return newsApi.patch(`/articles/${article_id}`, dataObject);
 };
 
 export const getArticleById = (article_id) => {
@@ -37,9 +37,11 @@ export const getComments = (article_id) => {
 };
 
 export const postComment = (article_id, commentObject) => {
-  console.log(commentObject);
-
   return newsApi
     .post(`/articles/${article_id}/comments`, commentObject)
     .then(({ data }) => data.comment);
+};
+
+export const deleteComment = (comment_id) => {
+  return newsApi.delete(`/comments/${comment_id}`);
 };
