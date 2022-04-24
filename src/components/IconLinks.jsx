@@ -22,9 +22,10 @@ const IconLinks = () => {
       <Link to={`/topics/cooking`}>
         <Restaurant className="icons" style={{ fontSize: 75 }} />
       </Link>
-      <Link to={`/`}>
+      <Link to={`/users/:username`}>
         <AccountCircle className="icons" style={{ fontSize: 75 }} />
       </Link>
+      <p>select article by topic</p>
     </>
   );
 };

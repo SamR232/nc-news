@@ -14,10 +14,10 @@ const SingleTopic = () => {
       .then((result) => {
         setArticles(result);
         setIsLoading(false);
+        setError(false);
       })
       .catch((err) => {
-        setError(err.response.data);
-        console.log(error);
+        setError(true);
       });
   }, [topic_slug]);
 

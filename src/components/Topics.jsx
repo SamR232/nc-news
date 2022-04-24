@@ -11,16 +11,16 @@ const Topics = () => {
     getTopics()
       .then((topics) => {
         setTopics(topics);
-        setIsLoading(false)
+        setIsLoading(false);
       })
       .catch((err) => {
         setError(err.response.data);
       });
   }, []);
 
-    if (isLoading) {
-      return <h3>Loading...</h3>;
-    }
+  if (isLoading) {
+    return <h3>Loading...</h3>;
+  }
 
   return (
     <>

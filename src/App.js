@@ -7,10 +7,10 @@ import SingleTopic from "./components/SingleTopic";
 import IconLinks from "./components/IconLinks";
 import Footer from "./components/Footer";
 import SingleArticle from "./components/SingleArticle";
+import User from "./components/User";
 import "@fontsource/roboto/300.css";
 
 function App() {
-  
   return (
     <div className="App">
       <header>
@@ -24,6 +24,7 @@ function App() {
         <Route path="/topics" element={<Topics />} />
         <Route path="/topics/:topic_slug" element={<SingleTopic />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
+        <Route path="/users/:username" element={<User />} />
       </Routes>
       <Footer />
     </div>
