@@ -10,12 +10,15 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-family: "Roboto";
   font-weight: bold;
-  font-size: larger;
+  font-size: small;
   display: grid;
 }
 
-h1 {
-  font-size: 3.5em;
+h2 {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 10px;
+  border-bottom: solid #0b0b0b;
 }
 
 .topicItems {
@@ -48,7 +51,7 @@ a:hover {
   list-style: none;
   margin: 1em;
   padding: 20px;
-  margin-left: 10px;
+  margin: 10px;
 }
 .collapsible .content {
   background-color: #0b0b0b;
@@ -64,10 +67,10 @@ a:hover {
 .icons {
   grid-template-columns: repeat(2, 50px 1fr);
   padding: 10px;
-  margin-left: 10px;
   background-color: black;
   border-radius: 8px;
   border: solid 5px rgb(75, 182, 182);
+  margin: 10px;
 }
 
 .footer {
@@ -75,5 +78,6 @@ a:hover {
   color: #969595;
   height: 1em;
   padding: 2.5em;
-  font-size: 25px;
+  font-size: 10px;
+  margin-bottom: 0;
 }

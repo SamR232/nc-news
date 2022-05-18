@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getTopics } from "../utils/api";
+import { getTopics } from "../../utils/api";
 import { Link } from "react-router-dom";
 
 const Topics = () => {
@@ -23,24 +23,20 @@ const Topics = () => {
   }
 
   return (
-    <>
-      <main>
-        <ul>
-          {topics.map((topic) => {
-            return (
-              <>
-                <li className="topicItems" key={topic.slug}>
-                  <Link to={`/topics/${topic.slug}`}>
-                    <h2>{topic.slug.toUpperCase()}</h2>
-                  </Link>
-                  <p>{topic.description}</p>
-                </li>
-              </>
-            );
-          })}
-        </ul>
-      </main>
-    </>
+    <main>
+      <ul>
+        {topics.map((topic) => {
+          return (
+            <li className="topicItems" key={topic.slug}>
+              <Link to={`/topics/${topic.slug}`}>
+                <h2>{topic.slug.toUpperCase()}</h2>
+              </Link>
+              <p>{topic.description}</p>
+            </li>
+          );
+        })}
+      </ul>
+    </main>
   );
 };
 

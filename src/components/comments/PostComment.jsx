@@ -10,69 +10,71 @@ const PostComment = ({ article_id, setComments }) => {
   const [newComment, setNewComment] = useState("");
 
   function handleSubmit(event) {
-    event.preventDefault();
-    alert("click ok to post comment!");
-    setNewComment("");
+    if (username === "" || newComment === "")
+      alert("More information required to add comment");
+    else {
+      event.preventDefault();
+      alert("click ok to post comment!");
+      setNewComment("");
 
-    postComment(article_id, { body: newComment, username: username }).then(
-      (comment) => {
-        setComments((comments) => {
-          return [comment, ...comments];
-        });
-      }
-    );
+      postComment(article_id, { body: newComment, username: username }).then(
+        (comment) => {
+          setComments((comments) => {
+            return [comment, ...comments];
+          });
+        }
+      );
+    }
   }
 
   return (
-    <>
-      <Box
+    <Box
+      sx={{
+        margin: "15px",
+        width: "100%",
+      }}
+    >
+      <TextField
         sx={{
-          margin: "15px",
-          width: "100%",
+          margin: "10px",
+          width: "50%",
+        }}
+        id="outlined-multiline-flexible"
+        label="Username"
+        required
+        maxRows={4}
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <TextField
+        sx={{
+          mx: "5px",
+          width: "80%",
+        }}
+        id="outlined-multiline-flexible"
+        label="Add your comment here!"
+        fullWidth
+        multiline
+        required
+        maxRows={4}
+        value={newComment}
+        onChange={(event) => setNewComment(event.target.value)}
+      />
+      <Button
+        size="large"
+        sx={{
+          mx: "5px",
+          my: "5px",
+        }}
+        type="submit"
+        variant="contained"
+        onClick={(e) => {
+          handleSubmit(e);
         }}
       >
-        <TextField
-          sx={{
-            margin: "10px",
-            width: "50%",
-          }}
-          id="outlined-multiline-flexible"
-          label="Username"
-          required
-          maxRows={4}
-          value={username}
-          onChange={(event) => setUsername(event.target.value)}
-        />
-        <TextField
-          sx={{
-            mx: "5px",
-            width: "80%",
-          }}
-          id="outlined-multiline-flexible"
-          label="Add your comment here!"
-          fullWidth
-          multiline
-          required
-          maxRows={4}
-          value={newComment}
-          onChange={(event) => setNewComment(event.target.value)}
-        />
-        <Button
-          size="large"
-          sx={{
-            mx: "5px",
-            my: "5px",
-          }}
-          type="submit"
-          variant="contained"
-          onClick={(e) => {
-            handleSubmit(e);
-          }}
-        >
-          Submit
-        </Button>
-      </Box>
-    </>
+        Submit
+      </Button>
+    </Box>
   );
 };
 

@@ -1,51 +1,37 @@
-import { useEffect, useState } from "react";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import { useState } from "react";
+import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
+import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import { Button } from "@mui/material";
-import { patchVotes } from "../utils/api";
+import { patchIncreaseVote, patchDecreaseVote } from "../utils/api";
 
 export const LikeButton = ({ article_id, votes }) => {
-  const [newVotes, setNewVotes] = useState(0);
+  const [newVotes, setNewVotes] = useState(votes);
   const [clicked, setClicked] = useState(false);
 
-  useEffect(() => {
-    setNewVotes(votes);
-    if (!clicked) return;
+  const handleLike = () => {
+    if (clicked) return;
     setNewVotes((currVotes) => currVotes + 1);
-    patchVotes(article_id, { inc_votes: 1 });
-  }, [clicked, article_id, votes]);
-
-  return (
-    <Button
-      onClick={() => setClicked(true)}
-      variant="outlined"
-      className="likeButton"
-    >
-      <ThumbUpIcon />
-      {newVotes}
-    </Button>
-  );
-};
-
-export const DislikeButton = ({ article_id, votes, setUpdatedVotes }) => {
-  const [newVotes, setNewVotes] = useState(0);
-  const [clicked, setClicked] = useState(false);
-
-  useEffect(() => {
-    setNewVotes(votes);
-    if (!clicked) return;
+    patchIncreaseVote(article_id);
+    setClicked(true);
+    alert("Thank you for voting!");
+  };
+  const handleDislike = () => {
+    if (clicked) return;
     setNewVotes((currVotes) => currVotes - 1);
-    patchVotes(article_id, { inc_votes: -1 });
-  }, [clicked, article_id, votes]);
+    patchDecreaseVote(article_id);
+    setClicked(true);
+    alert("Thank you for voting!");
+  };
 
   return (
-    <Button
-      onClick={() => setClicked(true)}
-      variant="outlined"
-      className="likeButton"
-    >
-      <ThumbDownIcon />
-      {newVotes}
-    </Button>
+    <>
+      <Button onClick={handleLike} variant="outlined">
+        <ArrowCircleUpIcon fontSize={"small"} />
+      </Button>
+      <Button onClick={handleDislike} variant="outlined">
+        <ArrowCircleDownIcon fontSize={"small"} />
+      </Button>
+      <p>Total votes: {newVotes}</p>
+    </>
   );
 };

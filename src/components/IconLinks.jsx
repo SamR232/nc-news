@@ -11,21 +11,20 @@ const IconLinks = () => {
   return (
     <>
       <Link to={`/`}>
-        <Home className="icons" style={{ fontSize: 75 }} />
+        <Home className="icons" style={{ fontSize: 50 }} />
       </Link>
       <Link to={`/topics/coding`}>
-        <Computer className="icons" style={{ fontSize: 75 }} />
+        <Computer className="icons" style={{ fontSize: 50 }} />
       </Link>
       <Link to={`/topics/football`}>
-        <SportsSoccerOutlined className="icons" style={{ fontSize: 75 }} />
+        <SportsSoccerOutlined className="icons" style={{ fontSize: 50 }} />
       </Link>
       <Link to={`/topics/cooking`}>
-        <Restaurant className="icons" style={{ fontSize: 75 }} />
+        <Restaurant className="icons" style={{ fontSize: 50 }} />
       </Link>
       <Link to={`/users/:username`}>
-        <AccountCircle className="icons" style={{ fontSize: 75 }} />
+        <AccountCircle className="icons" style={{ fontSize: 50 }} />
       </Link>
-      <p>select article by topic</p>
     </>
   );
 };

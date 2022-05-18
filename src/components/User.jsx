@@ -5,7 +5,7 @@ const User = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  let username = "tickle122";
+  let username = "grumpy19";
   useEffect(() => {
     getUsers(username).then((userData) => {
       setUser(userData);

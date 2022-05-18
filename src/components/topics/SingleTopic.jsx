@@ -1,23 +1,21 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getArticles } from "../utils/api";
-import Collapsible from "../utils/CollapsibleArticle";
+import { getArticlesByTopic } from "../../utils/api";
+import Collapsible from "../../utils/CollapsibleArticle";
 
 const SingleTopic = () => {
   const [articles, setArticles] = useState([]);
-  const [error, setError] = useState(true);
   const { topic_slug } = useParams();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getArticles(topic_slug)
+    getArticlesByTopic(topic_slug)
       .then((result) => {
         setArticles(result);
         setIsLoading(false);
-        setError(false);
       })
       .catch((err) => {
-        setError(true);
+        console.log(err);
       });
   }, [topic_slug]);
 
