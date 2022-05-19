@@ -20,4 +20,4 @@ If you'd like to run this locally on your machine, clone this repo with https://
 
 # Bug Fixing
 
-To ensure it works correctly, please ensure you have at least version 14.17.3 of Node.
+This project requires you to havea minimum of version 14.17.3 of Node.

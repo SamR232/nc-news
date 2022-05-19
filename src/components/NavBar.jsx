@@ -6,12 +6,12 @@ const NavBar = () => {
       <ul className="navBarList">
         <li className="navList">
           <Link to="/">
-            <h3>Home</h3>
+            <h2>Home</h2>
           </Link>
         </li>
         <li className="navList">
           <Link to="/topics">
-            <h3>Topics</h3>
+            <h2>Topics</h2>
           </Link>
         </li>
       </ul>

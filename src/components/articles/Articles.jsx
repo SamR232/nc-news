@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getArticles } from "../../utils/api";
 import CollapsibleArticle from "../../utils/CollapsibleArticle";
 import SortSelect from "../Sort";
+import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -26,9 +27,11 @@ const Articles = () => {
 
   return (
     <>
-      <SortSelect className="articles" setSearchTerm={setSearchTerm} />
+      <SortSelect setSearchTerm={setSearchTerm} />
       <ul>
         {articles.map((article) => {
+          const regex = /\d{4}-\d{2}-\d{2}/g;
+          const date = article.created_at.match(regex);
           return (
             <li className="articles" key={article.article_id}>
               <Link to={`/articles/${article.article_id}`}>
@@ -37,8 +40,11 @@ const Articles = () => {
               <CollapsibleArticle article={article} />
               <h3>Topic: {article.topic}</h3>
               <h3>Author: {article.author}</h3>
-              <p>Votes: {article.votes}</p>
-              <p>Created at {article.created_at}</p>
+              <p>
+                {article.votes}
+                <ArrowCircleUpIcon fontSize={"small"} />
+              </p>
+              <p>Created at: {date}</p>
               <p>Click title to leave a vote or a comment on this article!</p>
             </li>
           );

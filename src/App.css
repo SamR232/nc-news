@@ -28,7 +28,7 @@ h2 {
 }
 
 .navBarList {
-  background-color: rgb(10, 10, 10);
+  background-color: black;
 }
 a {
   color: rgb(75, 182, 182);
@@ -49,7 +49,6 @@ a:hover {
   border: solid black;
   border-radius: 8px;
   list-style: none;
-  margin: 1em;
   padding: 20px;
   margin: 10px;
 }
@@ -80,4 +79,9 @@ a:hover {
   padding: 2.5em;
   font-size: 10px;
   margin-bottom: 0;
+}
+
+.sortSelect {
+  margin: 0px 20px 0px 20px;
+  align-items: center;
 }

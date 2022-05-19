@@ -12,6 +12,7 @@ const sortByQuery = [
 const SortSelect = ({ setSearchTerm }) => {
   return (
     <Select
+      className="sortSelect"
       options={sortByQuery}
       defaultValue={{ value: "?sort_by=votes&order=desc", label: "Newest" }}
       onChange={(e) => {
