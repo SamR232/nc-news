@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   text-decoration: none;
-  line-height: 175%;
+  line-height: 150%;
 }
 
 .App {
@@ -12,6 +12,13 @@
   font-weight: bold;
   font-size: small;
   display: grid;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
+  margin: 10px;
+  border-bottom: solid #0b0b0b;
 }
 
 h2 {
