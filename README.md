@@ -2,7 +2,8 @@
 
 Welcome to my first app! 👋
 
-This is my first front-end app which was created during my time at Northcoders using
+This is my first front-end app which was created during my time at Northcoders. This can be viewed here
+https://6297330719dc2a7d7d4fc3fa--cosmic-tapioca-7659fe.netlify.app/
 
 If you'd like to run this locally on your machine, clone this repo with https://github.com/SamR232/nc-news.
 
